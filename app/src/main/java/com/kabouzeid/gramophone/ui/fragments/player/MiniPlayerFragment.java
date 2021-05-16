@@ -21,7 +21,9 @@ import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.MusicProgressViewUpdateHelper;
 import com.kabouzeid.gramophone.helper.PlayPauseButtonOnClickHandler;
 import com.kabouzeid.gramophone.ui.fragments.AbsMusicServiceFragment;
+import com.kabouzeid.gramophone.views.NextDrawable;
 import com.kabouzeid.gramophone.views.PlayPauseDrawable;
+import com.kabouzeid.gramophone.views.PrevDrawable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,12 +39,18 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
 
     @BindView(R.id.mini_player_title)
     TextView miniPlayerTitle;
+    @BindView(R.id.mini_player_prev_button)
+    ImageView miniPlayerPrevButton;
     @BindView(R.id.mini_player_play_pause_button)
     ImageView miniPlayerPlayPauseButton;
+    @BindView(R.id.mini_player_next_button)
+    ImageView miniPlayerNextButton;
     @BindView(R.id.progress_bar)
     MaterialProgressBar progressBar;
 
+    private PrevDrawable miniPlayerPrevDrawable;
     private PlayPauseDrawable miniPlayerPlayPauseDrawable;
+    private NextDrawable miniPlayerNextDrawable;
 
     private MusicProgressViewUpdateHelper progressViewUpdateHelper;
 
@@ -78,11 +86,27 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
         progressBar.setSupportProgressTintList(ColorStateList.valueOf(ThemeStore.accentColor(getActivity())));
     }
 
+    private void setUpPrevButton() {
+        miniPlayerPrevDrawable = new PrevDrawable(getActivity());
+        miniPlayerPrevButton.setImageDrawable(miniPlayerPrevDrawable);
+        miniPlayerPrevButton.setColorFilter(ATHUtil.resolveColor(getActivity(), R.attr.iconColor, ThemeStore.textColorSecondary(getActivity())), PorterDuff.Mode.SRC_IN);
+        miniPlayerPrevButton.setOnClickListener(new PlayPauseButtonOnClickHandler());
+    }
+
+
     private void setUpPlayPauseButton() {
         miniPlayerPlayPauseDrawable = new PlayPauseDrawable(getActivity());
         miniPlayerPlayPauseButton.setImageDrawable(miniPlayerPlayPauseDrawable);
         miniPlayerPlayPauseButton.setColorFilter(ATHUtil.resolveColor(getActivity(), R.attr.iconColor, ThemeStore.textColorSecondary(getActivity())), PorterDuff.Mode.SRC_IN);
         miniPlayerPlayPauseButton.setOnClickListener(new PlayPauseButtonOnClickHandler());
+    }
+
+
+    private void setUpNextButton() {
+        miniPlayerNextDrawable = new NextDrawable(getActivity());
+        miniPlayerNextButton.setImageDrawable(miniPlayerNextDrawable);
+        miniPlayerNextButton.setColorFilter(ATHUtil.resolveColor(getActivity(), R.attr.iconColor, ThemeStore.textColorSecondary(getActivity())), PorterDuff.Mode.SRC_IN);
+        miniPlayerNextButton.setOnClickListener(new PlayPauseButtonOnClickHandler());
     }
 
     private void updateSongTitle() {
