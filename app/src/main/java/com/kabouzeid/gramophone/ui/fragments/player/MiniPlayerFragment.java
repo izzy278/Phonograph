@@ -138,14 +138,6 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
         progressBar.setProgress(progress);
     }
 
-    private void onPrev() {
-
-    }
-
-    private void onNext() {
-
-    }
-
     @Override
     public void onResume() {
         super.onResume();
