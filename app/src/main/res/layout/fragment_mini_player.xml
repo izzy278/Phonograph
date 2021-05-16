@@ -38,37 +38,33 @@
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-        <com.kabouzeid.gramophone.views.IconImageView
+        <ImageButton
             android:id="@+id/mini_player_prev_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:scaleType="center"
-            app:srcCompat="@drawable/ic_skip_previous_white_24dp"
-            tools:ignore="ContentDescription" />
+            android:layout_margin="4dp"
+            android:background="?attr/roundSelector"
+            app:srcCompat="@drawable/ic_skip_previous_white_24dp" />
 
         <com.kabouzeid.gramophone.views.IconImageView
             android:id="@+id/mini_player_play_pause_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="4dp"
             android:scaleType="center"
             tools:ignore="ContentDescription" />
 
-        <com.kabouzeid.gramophone.views.IconImageView
+        <ImageButton
             android:id="@+id/mini_player_next_button"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:scaleType="center"
-            app:srcCompat="@drawable/ic_skip_next_white_24dp"
-            tools:ignore="ContentDescription" />
+            android:layout_margin="4dp"
+            android:background="?attr/roundSelector"
+            app:srcCompat="@drawable/ic_skip_next_white_24dp" />
 
     </LinearLayout>
 

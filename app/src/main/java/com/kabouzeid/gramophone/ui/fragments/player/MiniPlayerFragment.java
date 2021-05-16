@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -94,6 +95,7 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
     }
 
     private void setUpPrevButton() {
+        //miniPlayerPrevButton.setBackgroundColor(Color.TRANSPARENT);
         miniPlayerPrevButton.setColorFilter(ATHUtil.resolveColor(getActivity(), R.attr.iconColor, ThemeStore.textColorSecondary(getActivity())), PorterDuff.Mode.SRC_IN);
         miniPlayerPrevButton.setOnClickListener(v -> MusicPlayerRemote.back());
     }
@@ -108,6 +110,7 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
 
 
     private void setUpNextButton() {
+        //miniPlayerNextButton.setBackgroundColor(Color.TRANSPARENT);
         miniPlayerNextButton.setColorFilter(ATHUtil.resolveColor(getActivity(), R.attr.iconColor, ThemeStore.textColorSecondary(getActivity())), PorterDuff.Mode.SRC_IN);
         miniPlayerNextButton.setOnClickListener(v -> MusicPlayerRemote.playNextSong());
     }
